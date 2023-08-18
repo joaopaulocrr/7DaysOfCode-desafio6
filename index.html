@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Remoção de elementos de arrays</h1>
+    <p>Olá, vamos criar sua lista de compras.</p>
+
+<p>Você deseja adicionar algum item na sua lista de compras?</p>
+<label for="sim">Sim</label>
+<input type="radio" name="simOuNao" id="sim"> <br>
+
+<label for="nao">Não</label>
+<input type="radio" name="simOuNao" id="nao">
+<br>
+
+
+<span id="paragEinput">
+    <p id="paragrafoAdicionarAlimento"></p>
+</span>
+
+<select name="selectCategorias" id="selectCategorias" style="display: none;">
+
+    <option value="">Escolha uma categoria</option>
+    <option id="cereais" value="Cereais">Cereais</option>
+    <option id="doces" value="Doces">Doces</option>
+    <option id="congelados" value="Congelados">Congelados</option>
+    <option id="laticinios" value="Laticínios">Laticínios</option>
+    <option id="frutas" value="Frutas">Frutas</option>
+</select>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
