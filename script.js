@@ -1,5 +1,5 @@
 const paragrafoAdicionarAlimento = document.getElementById('paragrafoAdicionarAlimento')
-
+const body = document.getElementById('corpo')
 const categorias = {}
 function adicionarItem(categoria, item) {
 if (!categorias[categoria]) {
