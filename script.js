@@ -1,23 +1,9 @@
 const paragrafoAdicionarAlimento = document.getElementById('paragrafoAdicionarAlimento')
 const body = document.getElementById('corpo')
 const categorias = {}
-function adicionarItem(categoria, item) {
-    if (!categorias[categoria]) {
-        categorias[categoria] = []; // Inicializa a categoria se ainda não existir
-    }
-
-    categorias[categoria].push(item); // Adiciona o item à categoria
-}
-function removerItem(categoria, item) {
-    if (!categorias[categoria]) {
-        categorias[categoria] = []; // Inicializa a categoria se ainda não existir
-    }
-
-    categorias[categoria].splice(item); // Adiciona o item à categoria
-}
 
 const yes = document.getElementById('sim')
-const no = document.getElementById('nao')
+const no = document.getElementById('nao')  
 const buttonAdd = document.createElement('button')
 const buttonRemove = document.createElement('button')
 let novoItem = ''
@@ -33,6 +19,7 @@ yes.addEventListener('change', () => {
     inputItem.focus()
 
     selectCategorias.style.display = 'block'
+    selectCategorias.style.marginBottom = '20px'
 
     body.appendChild(buttonAdd)
     buttonAdd.textContent = 'Adicionar'
@@ -45,6 +32,18 @@ yes.addEventListener('change', () => {
     buttonRemove.style.cursor = 'pointer'
     buttonRemove.textContent = 'Remover'
     buttonRemove.setAttribute('id', 'addButton')
+    //========================================================================================//
+   
+    function adicionarItem(categoria, item) {
+        if (!categorias[categoria]) {
+            categorias[categoria] = []; // Inicializa a categoria se ainda não existir
+        }
+    
+        categorias[categoria].push(item); // Adiciona o item à categoria
+        console.log(typeof(categoria))
+        console.log(typeof(categorias[categorias]))
+    }
+    
 
     buttonAdd.addEventListener('click', () => {
         if (selectCategorias.value == '') {
@@ -65,6 +64,19 @@ yes.addEventListener('change', () => {
             }
         }
     })
+
+    //==============================================================================================//
+   
+    function removerItem(categoria, item) {
+
+            const indice = categorias[categoria].indexOf(item)
+            if(indice == -1) {
+                alert ('Item não encontrado')
+            }
+            console.log(indice ,item)
+            categorias[categoria].splice(indice, 1)
+    
+    }
 
     buttonRemove.addEventListener('click', () => {
         if (selectCategorias.value == '') {
