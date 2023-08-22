@@ -39,12 +39,9 @@ yes.addEventListener('change', () => {
             categorias[categoria] = []; // Inicializa a categoria se ainda não existir
         }
     
-        categorias[categoria].push(item); // Adiciona o item à categoria
-        console.log(typeof(categoria))
-        console.log(typeof(categorias[categorias]))
+        categorias[categoria].push(item); // Adiciona o item à categoriav   
     }
     
-
     buttonAdd.addEventListener('click', () => {
         if (selectCategorias.value == '') {
             alert("Escolha uma categoria para adicionar/remover o item:")
@@ -72,11 +69,11 @@ yes.addEventListener('change', () => {
             const indice = categorias[categoria].indexOf(item)
             if(indice == -1) {
                 alert ('Item não encontrado')
+            }else{
+                categorias[categoria].splice(indice, 1)
             }
-            console.log(indice ,item)
-            categorias[categoria].splice(indice, 1)
-    
     }
+   
 
     buttonRemove.addEventListener('click', () => {
         if (selectCategorias.value == '') {
@@ -91,10 +88,6 @@ yes.addEventListener('change', () => {
                 inputItem.value = ''
             }
             inputItem.focus()
-
-            for (const prop in categorias) {
-                console.log(`${prop}: ${categorias[prop]}`);
-            }
         }
     })
 })
